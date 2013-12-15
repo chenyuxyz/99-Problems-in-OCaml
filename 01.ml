@@ -1,5 +1,7 @@
+(* Find the last element of a list. *)
+
 let rec last = function
-    [] -> None
+  | [] -> None
   | [ans] -> Some ans
   | _ :: tl -> last tl
 

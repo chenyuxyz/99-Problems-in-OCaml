@@ -1,3 +1,5 @@
+(* Find out whether a list is a palindrome. *)
+
 let is_palindrome lst =
   let rev lst =
     let rec iter acc = function

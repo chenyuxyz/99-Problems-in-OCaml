@@ -1,6 +1,8 @@
+(* Find the number of elements of a list. *)
+
 let length l =
   let rec iter acc = function
-      [] -> acc
+    | [] -> acc
     | _ :: tl -> iter (acc + 1) tl
   in
     iter 0 l
