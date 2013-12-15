@@ -1,11 +1,12 @@
 (* Pack consecutive duplicates of list elements into sublists. *)
 
 let pack lst =
-  let rec iter acc cur lst = match (cur, lst) with
-    | (_, []) -> cur :: acc
-    | ([], hd :: tl) -> iter acc [hd] tl
-    | (hc :: _, hd :: tl) -> if hc = hd then iter acc (hd :: cur) tl
-                                        else iter (cur :: acc) [hd] tl
+  let rec iter acc cur = function
+    | [] -> cur :: acc
+    | [x] -> (x :: cur) :: acc
+    | h1 :: (h2 :: _ as tl) ->
+        if h1 = h2 then iter acc (h1 :: cur) tl
+                   else iter ((h1 ::cur) :: acc) [] tl
   in
     List.rev (iter [] [] lst)
 
