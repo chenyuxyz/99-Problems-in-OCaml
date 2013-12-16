@@ -10,5 +10,5 @@ let flatten lst =
   in
     List.rev (extract [] lst)
 
-let _ = assert(flatten [One "a"; Many[One "b"; Many[One "c"; One "d"]; One "e"]] 
+let () = assert(flatten [One "a"; Many[One "b"; Many[One "c"; One "d"]; One "e"]] 
                 = ["a"; "b"; "c"; "d"; "e"])

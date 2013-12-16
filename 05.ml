@@ -7,5 +7,5 @@ let rev lst =
   in
     iter [] lst
 
-let _ = assert(rev [] = [])
-let _ = assert(rev ["a" ; "b" ; "c"] = ["c"; "b"; "a"])
+let () = assert(rev [] = [])
+let () = assert(rev ["a" ; "b" ; "c"] = ["c"; "b"; "a"])

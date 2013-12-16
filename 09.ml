@@ -10,6 +10,6 @@ let pack lst =
   in
     List.rev (iter [] [] lst)
 
-let _ = assert (pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"]
+let () = assert (pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"]
                 = [["a"; "a"; "a"; "a"]; ["b"]; ["c"; "c"]; ["a"; "a"]; ["d"; "d"];
                    ["e"; "e"; "e"; "e"]])

@@ -7,5 +7,5 @@ let length l =
   in
     iter 0 l
 
-let _ = assert (length [ "a" ; "b" ; "c"] = 3)
-let _ = assert (length [] = 0)
+let () = assert (length [ "a" ; "b" ; "c"] = 3)
+let () = assert (length [] = 0)
