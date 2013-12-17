@@ -6,13 +6,11 @@ type 'a rle =
 ;;
 
 let decode lst =
+  let rec gen x acc n = if n = 0 then acc else gen x (x :: acc) (n - 1) in
   let rec iter acc = function
     | [] -> acc
     | One x :: tl -> iter (x :: acc) tl
-    | Many (n, x) :: tl ->
-        if n > 1
-        then iter (x :: acc) (Many (n - 1, x) :: tl)
-        else iter (x :: acc) tl
+    | Many (n, x) :: tl -> iter ((gen x [] n) @ acc) tl
   in
     List.rev (iter [] lst)
 
